@@ -1,4 +1,15 @@
 # China Area Network
+# Apple（未屏蔽服务）
+host-suffix,aaplimg.com,direct
+host-suffix,apple.co,direct
+host-suffix,apple.com,direct
+host-suffix,apple-cloudkit.com,direct
+host-suffix,appstore.com,direct
+host-suffix,cdn-apple.com,direct
+host-suffix,icloud.com,direct
+host-suffix,icloud-content.com,direct
+host-suffix,me.com,direct
+host-suffix,mzstatic.com,direct
 # > Alibaba
 user-agent,%E4%BC%98%E9%85%B7*,direct
 host-suffix,alibaba.com,direct
@@ -32,8 +43,6 @@ host-suffix,pstatp.com,direct
 host-suffix,snssdk.com,direct
 host-suffix,iesdouyin.com,direct
 host-suffix,toutiao.com,direct
-# > ChinaTelecom
-host-suffix,21cn.com,direct
 # > DiDi
 host-suffix,didialift.com,direct
 host-suffix,didiglobal.com,direct
@@ -53,6 +62,15 @@ user-agent,PayPal*,direct
 host-suffix,paypal.com,direct
 host-suffix,paypal.me,direct
 host-suffix,paypalobjects.com,direct
+# > Spotify
+user-agent,Spotify*,direct
+host-suffix,pscdn.co,direct
+host-suffix,scdn.co,direct
+host-suffix,spotify.com,direct
+host-suffix,spoti.fi,direct
+host-suffix,spotifycdn.com,direct
+host-keyword,spotify.com,direct
+host-keyword,-spotify-com,direct
 # > Sina
 host-suffix,sina.com,direct
 host-suffix,weibo.com,direct
