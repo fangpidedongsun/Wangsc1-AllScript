@@ -24,10 +24,10 @@ let BLOCKLIST = [
     ];
 
 //The default outbound: 'Direct' or 'Rule' or 'Global-proxy'.
-let BlockList = "直接连接";
-let AllowList = "规则模式";
-let Others = "规则模式";
-let Cellular = "规则模式";
+let BlockList = "Direct";
+let AllowList = "Rule";
+let Others = "Rule";
+let Cellular = "Rule";
 
 function changeOutboundMode(mode) {
     ABOUT_IP += $network.v4.primaryAddress;
@@ -52,7 +52,7 @@ if ($network.v4.primaryInterface == "en0") {
     else if(CARRIER == "460-01" || CARRIER == "460-06" || CARRIER == "460-09") SUBTITLE_CELLULAR += CHINA_UNICOM;
     else if(CARRIER == "460-03" || CARRIER == "460-05" || CARRIER == "460-11") SUBTITLE_CELLULAR += CHINA_TELECOM;
     else if(CARRIER == "460-20") SUBTITLE_CELLULAR += CHINA_TIETONG;
-    NETWORK += SUBTITLE_CELLULAR + $network['cellular-data'].radio;
+    NETWORK += SUBTITLE_CELLULAR + " ";
     changeOutboundMode(Cellular);
 }
 
