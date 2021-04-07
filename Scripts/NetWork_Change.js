@@ -1,22 +1,22 @@
-//event network-changed script-path=https://raw.githubusercontent.com/Wangsc1/All/master/Scripts/Caiyun.js
+//OutboundMode = type=event,event-name=network-changed,script-path=https://raw.githubusercontent.com/Wangsc1/All/master/Scripts/NetWork_Change.js
 //version: 2.2
 //auther: tempoblink
 
 //The Notification Format.
-let TITLE = 'Outbound Changed!';
-let SUBTITLE_CELLULAR = 'Cellular: ';
-let SUBTITLE_WIFI = 'Wi-Fi: ';
-let ABOUT_MODE = 'Outbound mode: ';
-let ABOUT_IP = 'New IP address: ';
-let CHINA_MOBILE = "China Mobile";
-let CHINA_UNICOM = "China Unicom";
-let CHINA_TELECOM = "China Telecom";
-let CHINA_TIETONG = "China Tietong";
+let TITLE = 'Surge运行模式';
+let SUBTITLE_CELLULAR = '数据网络: ';
+let SUBTITLE_WIFI = '无线网络: ';
+let ABOUT_MODE = '运行模式: ';
+let ABOUT_IP = '当前地址: ';
+let CHINA_MOBILE = "中国移动";
+let CHINA_UNICOM = "中国联通";
+let CHINA_TELECOM = "中国电信";
+let CHINA_TIETONG = "中国铁通";
 
 //white ssid and black ssid.
 let ALLOWLIST = [
-            "home_ssid1",
-            "home_ssid2"
+            "Wang_2.4G",
+            "Wang_5G"
     ];
 let BLOCKLIST = [
             "free_ssid1",
@@ -24,10 +24,10 @@ let BLOCKLIST = [
     ];
 
 //The default outbound: 'Direct' or 'Rule' or 'Global-proxy'.
-let BlockList = "Direct";
-let AllowList = "Rule";
-let Others = "Rule";
-let Cellular = "Rule";
+let BlockList = "直接连接";
+let AllowList = "规则模式";
+let Others = "规则模式";
+let Cellular = "规则模式";
 
 function changeOutboundMode(mode) {
     ABOUT_IP += $network.v4.primaryAddress;
@@ -52,7 +52,7 @@ if ($network.v4.primaryInterface == "en0") {
     else if(CARRIER == "460-01" || CARRIER == "460-06" || CARRIER == "460-09") SUBTITLE_CELLULAR += CHINA_UNICOM;
     else if(CARRIER == "460-03" || CARRIER == "460-05" || CARRIER == "460-11") SUBTITLE_CELLULAR += CHINA_TELECOM;
     else if(CARRIER == "460-20") SUBTITLE_CELLULAR += CHINA_TIETONG;
-    NETWORK += SUBTITLE_CELLULAR + " " + $network['cellular-data'].radio;
+    NETWORK += SUBTITLE_CELLULAR + $network['cellular-data'].radio;
     changeOutboundMode(Cellular);
 }
 
